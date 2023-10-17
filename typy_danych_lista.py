@@ -17,6 +17,7 @@ print(lista)  # ['Radek', 'Tomek', 'Asia', 'Renata', 'Darek', 'Paweł', 'Marcin'
 print(lista[1])
 # nazwa listy, nawias [], numer indeksu
 # indeksowanie od 0, czyli pierwszy element ma indeks 0
+# print(lista[10])  # IndexError: list index out of range
 
 lista[1] = "Magda"
 print(lista)  # ['Radek', 'Magda', 'Asia', 'Renata', 'Darek', 'Paweł', 'Marcin']
