@@ -19,19 +19,20 @@ For example, the hypotenuse of a 3/4/5 right triangle is:
     5.0
 """
 
+
 class MyFirstClass:
     """
     Reprezentuje punkty x i y
     """
 
-    def __init__(self, x=0, y=0):
+    def __init__(self, x=0, y=0):  # funkcja inicjalizujaca (konstruktor)
         """
         metoda inicjalizująca
         :param x: x
         :param y: y
         """
 
-        self.move(x, y)
+        self.move(x, y)  # wywołuje funkcje move()
 
     def move(self, x: float, y: float) -> None:
         self.x = x
@@ -44,7 +45,7 @@ class MyFirstClass:
         return math.hypot(self.x - other.x, self.y - other.y)
 
     # reprezentacja obiektu w sposób czytelny
-    def __repr__(self):
+    def __repr__(self):  # funkcja magiczna
         return f"x = {self.x}, y = {self.y}"
 
 
