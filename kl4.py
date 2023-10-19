@@ -25,6 +25,24 @@ class Suplier(Contact):
         print(f"{order} zamówiono od {self.name}")
 
 
+class Friend(Suplier, Contact):
+    """
+    dziedziczy po klasie Suplier i Contact
+    """
+
+    def __init__(self, name, email, phone):
+        super().__init__(name, email)
+        self.phone = phone
+
+    def order(self, order):
+        # super(Friend, self).order(order)
+        # Suplier.order(self, order)
+        print("To ja", self.name, f"{order}")
+
+    def __repr__(self):
+        return f"{self.name!r}, {self.email!r}, +48 {self.phone!r}"
+
+
 cl = ContactList()
 print(cl)
 cl.append("e")
@@ -37,3 +55,10 @@ s.order("kawa")
 print(s.all_contacts)  # ['Adam', 'adam@wp.pl', 'Radek', 'radek@wp.pl']
 print(s.all_contacts.search('Adam'))  # ['Adam', 'adam@wp.pl']
 # 11:30
+f = Friend("Jarek", "jarek@wp.pl", "66666666")
+print(f)  # 'Jarek', 'jarek@wp.pl'
+print(Friend.__mro__)  # sprawdzenie kolejnsci rozwiązywania nazw
+# (<class '__main__.Friend'>, <class '__main__.Suplier'>, <class '__main__.Contact'>, <class 'object'>)
+f.order("herbata")
+print(f)
+print(f.all_contacts)  # ['Adam', 'adam@wp.pl', 'Radek', 'radek@wp.pl', 'Jarek', 'jarek@wp.pl', +48 '66666666']
