@@ -13,3 +13,4 @@ except ValueError:
     print("Wystąpił bład wartości")
 except Exception as e:
     print("Wystąpił błąd", e)
+# 14:40
