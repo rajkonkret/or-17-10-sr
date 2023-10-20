@@ -50,3 +50,4 @@ currency_data2 = CurrencyData.model_validate_json(json_string)
 print(currency_data2)
 # C:\Users\CSComarch\PycharmProjects\or-17-10-sr\json_zad2.py:44: PydanticDeprecatedSince20: The `parse_raw` method is deprecated; if your data is JSON use `model_validate_json`, otherwise load the data then use `model_validate` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.4/migration/
 #   currency_data = CurrencyData.parse_raw(json_string)
+# 14:10
