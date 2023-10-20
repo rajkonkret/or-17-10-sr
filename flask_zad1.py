@@ -16,3 +16,8 @@ def salvador():
 
 if __name__ == '__main__':
     app.run(debug=True, port=8080)
+
+# uzycie pyinstaller
+# pip install pyinstaller
+# pyinstaller.exe .\arkusz1.py
+# pojawi się katalog dist a w nim plik .exe
