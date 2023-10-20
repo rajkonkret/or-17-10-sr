@@ -67,3 +67,4 @@ obi1 = sesion.query(Person).filter(
 
 print(obi1)  # Obi Wan Kenobi(id=3
 print(obi1.addresses)  # [obi@example.com, wanam@example.com]
+# 11:10 - test
