@@ -45,3 +45,4 @@ with open('dane.json', 'r', encoding='utf-8') as f:
 
 print(data)
 print(type(data))  # <class 'dict'>
+# 13:20
