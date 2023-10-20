@@ -27,7 +27,7 @@ print(data['age'])
 print(data['city'])
 
 data['country'] = "Polska"
-del data['city']
+# del data['city']
 print(data)
 data['car'] = [{"color": "blue"}, {"brand": "Fiat"}]
 modifed_json = json.dumps(data)
@@ -38,7 +38,7 @@ print(modifed_json)
 
 person_dict = {'name': 'Radek', 'city': "Łódź", 'age': "38", "czy_pali": None}
 with open('dane.json', 'w', encoding='utf-8') as f:
-    json.dump(person_dict, f, indent=4, sort_keys=True)
+    json.dump(data, f, indent=4, sort_keys=True)
 
 with open('dane.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
