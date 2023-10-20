@@ -6,7 +6,8 @@ from sqlalchemy import (
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker
 
-engine = create_engine('sqlite:///:memory:')
+# engine = create_engine('sqlite:///:memory:')  # przechowuje bazę w pamięci
+engine = create_engine('sqlite:///mydatabase.db')  # przechowuje baze w pliku
 Base = declarative_base()
 
 
@@ -41,6 +42,28 @@ Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 sesion = Session()
 anakin = Person(name='Anakin', age=38)
+obi = Person(name="Obi Wan Kenobi", age=40)
+obi.addresses = [
+    Address(email='obi@example.com'),
+    Address(email='wanam@example.com')
+]
 
 sesion.add(anakin)
+sesion.add(obi)
 sesion.commit()
+
+all_ = sesion.query(Person).all()
+print(all_)
+# [Anakin(id=1]
+
+an1 = sesion.query(Person).first()
+print(an1)
+print(type(an1))
+print(an1.id, an1.name)  # 1 Anakin
+
+obi1 = sesion.query(Person).filter(
+    Person.name.like('Obi%')
+).first()
+
+print(obi1)  # Obi Wan Kenobi(id=3
+print(obi1.addresses)  # [obi@example.com, wanam@example.com]
